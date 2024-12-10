@@ -11,7 +11,7 @@ from mutagen.wav import WAVE
 from mutagen.mp4 import MP4
 
 # Funktion zum Entfernen von Metadaten aus Bildern
-def clear_image_metadata(imgname):
+def RDG_clear_image_metadata(imgname):
     # Öffnen der Bilddatei
     img = Image.open(imgname)
     # Lesen der Bilddaten ohne Metadaten
@@ -24,7 +24,7 @@ def clear_image_metadata(imgname):
     print(f"Metadata successfully cleared from image '{imgname}'.")
 
 # Funktion zum Entfernen von Metadaten aus PDF-Dateien
-def clear_pdf_metadata(pdfname):
+def RDG_clear_pdf_metadata(pdfname):
     # Öffnen der PDF-Datei
     reader = PdfReader(pdfname)
     writer = PdfWriter()
@@ -40,7 +40,7 @@ def clear_pdf_metadata(pdfname):
     print(f"Metadata successfully cleared from PDF '{pdfname}'.")
 
 # Funktion zum Entfernen von Metadaten aus Audiodateien
-def clear_audio_metadata(audioname):
+def RDG_clear_audio_metadata(audioname):
     # Öffnen der Audiodatei mit Mutagen
     audio = mutagen.File(audioname)
     if audio is not None:
@@ -52,7 +52,7 @@ def clear_audio_metadata(audioname):
         print(f"Failed to clear metadata from audio '{audioname}'.")
 
 # Funktion zum Entfernen von Metadaten aus Videodateien
-def clear_video_metadata(videoname):
+def RDG_clear_video_metadata(videoname):
     # Öffnen der Videodatei
     video = VideoFileClip(videoname)
     # Speichern des Videos ohne Metadaten
@@ -60,17 +60,17 @@ def clear_video_metadata(videoname):
     print(f"Metadata successfully cleared from video '{videoname}'.")
 
 # Funktion zur Erkennung des Dateityps und zum Entfernen der Metadaten
-def clear_metadata(filename):
+def RDG_clear_metadata(filename):
     # Bestimmen der Dateierweiterung
     ext = os.path.splitext(filename)[1].lower()
     if ext in ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff']:
-        clear_image_metadata(filename)
+        RDG_clear_image_metadata(filename)
     elif ext in ['.pdf']:
-        clear_pdf_metadata(filename)
+        RDG_clear_pdf_metadata(filename)
     elif ext in ['.mp3', '.flac', '.wav', '.m4a', '.ogg']:
-        clear_audio_metadata(filename)
+        RDG_clear_audio_metadata(filename)
     elif ext in ['.mp4', '.avi', '.mkv', '.mov']:
-        clear_video_metadata(filename)
+        RDG_clear_video_metadata(filename)
     else:
         print(f"File type '{ext}' not supported for metadata removal.")
 
@@ -81,4 +81,4 @@ parser.add_argument("file", help="File from which to remove metadata")
 args = parser.parse_args()
 # Metadaten der angegebenen Datei entfernen
 if args.file:
-    clear_metadata(args.file)
+    RDG_clear_metadata(args.file)
