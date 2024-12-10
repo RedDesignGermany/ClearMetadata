@@ -1,4 +1,4 @@
-**# ClearMetadata**
+# **ClearMetadata**
 Clear all hidden Metadatas with Pyhton
 
 ## Was macht das Script?
