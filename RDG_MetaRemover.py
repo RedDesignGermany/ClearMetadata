@@ -66,7 +66,7 @@ r" \____|_|\___|\__,_|_|    |_|  |_|\___|\__\__,_|\__,_|\__,_|\__\__,_|___/ " + 
         "Die Anwendung Clear Metadatas entfernt Metadaten aus verschiedenen Dateitypen wie Bildern, PDFs, Audios und Videos.\n\n"
         "UNTERSTÜTZTE DATEI-FORMATE:\n"
         "  Bilder: .jpg, .jpeg, .png, .gif, .bmp, .tiff\n"
-        "  PDFs: .pdf\n"
+        "  PDFs:   .pdf\n"
         "  Audios: .mp3, .flac, .wav, .m4a, .ogg\n"
         "  Videos: .mp4, .avi, .mkv, .mov"
     ),
