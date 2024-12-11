@@ -7,19 +7,22 @@ ClearMetadatas, wie der Name es schon anmuten lässt, löscht alle "überflüssi
 ## Beispielaufruf:
 Um das Skript auszuführen und die Metadaten eines Bildes, PDFs, Audios oder Videos zu entfernen, kannst du den folgenden Befehl im Terminal verwenden:
 ```
-**Für Bilder:**
+**für Bilder:**
 zsh
 python RDG_MetaRemover.py your_image.jpg
-
-**Für PDFs:**
+```
+```
+**für PDFs:**
 zsh
 python RDG_MetaRemover.py your_PFD.pdf
-
-**Für Audios:**
+```
+```
+**für Audios:**
 zsh
 python RDG_MetaRemover.py your_mp3.mp3
-
-**Für Videos:**
+```
+```
+**für Videos:**
 zsh
 python RDG_MetaRemover.py your_video.avi
 ```
