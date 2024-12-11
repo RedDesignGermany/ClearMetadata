@@ -1,11 +1,5 @@
-  ____ _                   __  __      _            _       _        
- / ___| | ___  __ _ _ __  |  \/  | ___| |_ __ _  __| | __ _| |_ __ _ 
-| |   | |/ _ \/ _` | '__| | |\/| |/ _ \ __/ _` |/ _` |/ _` | __/ _` |
-| |___| |  __/ (_| | |    | |  | |  __/ || (_| | (_| | (_| | || (_| |
- \____|_|\___|\__,_|_|    |_|  |_|\___|\__\__,_|\__,_|\__,_|\__\__,_|
-                  made with \u2764 by RED DESIGN GERMANY
-
 # **Clear Metadata**
+made with :white_heart: by RED DESIGN GERMANY
 
 ## What does it do?
 Clear Metadata, as the name suggests, deletes all “superfluous” metadata from images, videos, PDFs, audios and even docx, xlxs, pptx docs. It's also possible to remove the metadata from the files in a folder. \nInstead of the -f or --file argument, -p or --path path/to/folder/ must be entered
