@@ -56,7 +56,7 @@ def clear_metadata(filename):
     
 # Einrichtung der Befehlszeilenargumente
 parser = argparse.ArgumentParser(description="Remove metadata from a file.n/Supported files: .pdf, .mp3, .wav, .avi, .mkv, .flac, .mp4, .ogg, .jpg, .jpeg, .png, .bmp, .tiff \nRED DESIGN GERMANY \u2764")
-parser.add_argument("file", help="File from which to remove metadata")
+parser.add_argument("file", help="Datei von der die Metadaten entfernt werden sollen, z. B. test.mp3.\nDie Datei muss ich gleichen Ordner sein! \nRED DESIGN GERMANY \u2764")
 # Argumente parsen
 args = parser.parse_args()
 # Metadaten der angegebenen Datei entfernen
