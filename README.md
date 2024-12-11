@@ -4,6 +4,12 @@ Clear all hidden Metadatas with Pyhton
 ## Was macht das Script?
 ClearMetadatas, wie der Name es schon anmuten lässt, löscht alle "überflüssigen" Metadatas aus Bildern, Videos, PDFs und Audios in der Version 1.0..
 
+## Unterstützte Dateitypen
+- .pdf
+- .mp3, .wav, .flac, .ogg
+- .jpg, .jpeg, .png, .bmp, .tiff
+- .avi, .mp4, .mkv
+
 ## Beispielaufruf:
 Um das Skript auszuführen und die Metadaten eines Bildes, PDFs, Audios oder Videos zu entfernen, kannst du den folgenden Befehl im Terminal verwenden:
 ```
