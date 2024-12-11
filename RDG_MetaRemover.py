@@ -11,7 +11,7 @@ def clear_image_metadata(imgname):
     img_without_metadata = Image.new(img.mode, img.size)
     img_without_metadata.putdata(data)
     img_without_metadata.save(imgname)
-    print(f"Metadata successfully cleared from image '{imgname}'.\nRED DESIGN GERMANY \u2764")
+    print(f"Metadaten erfolgreich aus dem Bild '{imgname}' entfernt.\nRED DESIGN GERMANY \u2764")
 
 def clear_pdf_metadata(pdfname):
     from PyPDF2 import PdfReader, PdfWriter
@@ -23,7 +23,7 @@ def clear_pdf_metadata(pdfname):
         writer.add_metadata({key: ''})
     with open(pdfname, "wb") as f:
         writer.write(f)
-    print(f"Metadata successfully cleared from PDF '{pdfname}'.\nRED DESIGN GERMANY \u2764")
+    print(f"Metadaten erfolgreich aus der PDF '{pdfname}' entfernt.\nRED DESIGN GERMANY \u2764")
 
 def clear_audio_metadata(audioname):
     from mutagen import File
@@ -31,15 +31,15 @@ def clear_audio_metadata(audioname):
     if audio is not None:
         audio.delete()
         audio.save()
-        print(f"Metadata successfully cleared from audio '{audioname}'\nRED DESIGN GERMANY \u2764")
+        print(f"Metadaten erfolgreich aus der Audiodatei '{audioname}' entfernt.\nRED DESIGN GERMANY \u2764")
     else:
-        print(f"Failed to clear metadata from audio '{audioname}'.\nRED DESIGN GERMANY \u2764")
+        print(f"Fehler beim Entfernen der Metadaten aus der Audiodatei '{audioname}'.")
 
 def clear_video_metadata(videoname):
     from moviepy.editor import VideoFileClip
     video = VideoFileClip(videoname)
     video.write_videofile(videoname, codec="libx264", audio_codec="aac", remove_temp=True)
-    print(f"Metadata successfully cleared from video '{videoname}'.\nRED DESIGN GERMANY \u2764")
+    print(f"Metadaten erfolgreich aus der Videodatei '{videoname}' entfernt.\nRED DESIGN GERMANY \u2764")
 
 def clear_metadata(filename):
     ext = os.path.splitext(filename)[1].lower()
@@ -52,13 +52,29 @@ def clear_metadata(filename):
     elif ext in ['.mp4', '.avi', '.mkv', '.mov']:
         clear_video_metadata(filename)
     else:
-        print(f"File type '{ext}' not supported for metadata removal.\nRED DESIGN GERMANY \u2764")
-    
+        print(f"Dateityp '{ext}' wird nicht unterstützt.")
+
 # Einrichtung der Befehlszeilenargumente
-parser = argparse.ArgumentParser(description="Remove metadata from a file.n/Supported files: .pdf, .mp3, .wav, .avi, .mkv, .flac, .mp4, .ogg, .jpg, .jpeg, .png, .bmp, .tiff \nRED DESIGN GERMANY \u2764")
-parser.add_argument("file", help="Datei von der die Metadaten entfernt werden sollen, z. B. test.mp3.\nDie Datei muss ich gleichen Ordner sein! \nRED DESIGN GERMANY \u2764")
+parser = argparse.ArgumentParser(
+    description=(
+r"  ____ _                   __  __      _            _       _             " + "\n" +
+r" / ___| | ___  __ _ _ __  |  \/  | ___| |_ __ _  __| | __ _| |_ __ _ ___  " + "\n" +
+r"| |   | |/ _ \/ _` | '__| | |\/| |/ _ \ __/ _` |/ _` |/ _` | __/ _` / __| " + "\n" +
+r"| |___| |  __/ (_| | |    | |  | |  __/ || (_| | (_| | (_| | || (_| \__ \ " + "\n" +
+r" \____|_|\___|\__,_|_|    |_|  |_|\___|\__\__,_|\__,_|\__,_|\__\__,_|___/ " + "\n\n" +
+        "Made by RED DESIGN GERMANY \u2764 \n\n" 
+        "Die Anwendung Clear Metadatas entfernt Metadaten aus verschiedenen Dateitypen wie Bildern, PDFs, Audios und Videos.\n\n"
+        "UNTERSTÜTZTE DATEI-FORMATE:\n"
+        "  Bilder: .jpg, .jpeg, .png, .gif, .bmp, .tiff\n"
+        "  PDFs: .pdf\n"
+        "  Audios: .mp3, .flac, .wav, .m4a, .ogg\n"
+        "  Videos: .mp4, .avi, .mkv, .mov"
+    ),
+    formatter_class=argparse.RawTextHelpFormatter
+)
+parser.add_argument("datei", help="Die Datei, von der die Metadaten entfernt werden sollen.")
 # Argumente parsen
 args = parser.parse_args()
 # Metadaten der angegebenen Datei entfernen
-if args.file:
-    clear_metadata(args.file)
+if args.datei:
+    clear_metadata(args.datei)
