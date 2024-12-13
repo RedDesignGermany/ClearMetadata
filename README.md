@@ -7,7 +7,7 @@ Clear Metadata, as the name suggests, deletes all “superfluous” metadata fro
 
 ## Supported files:
 - .pdf
-- jpg, .jpeg, .png, .gif, .bmp, .tiff, .webp, .heic
+- .jpg, .jpeg, .png, .gif, .bmp, .tiff, .webp, .heic
 - .mp4, .avi, .mkv, .mov, .wmv, .mpeg
 - .mp3, .flac, .wav, .m4a, .ogg, .aac
 - .docx, .xlsx, .pptx
