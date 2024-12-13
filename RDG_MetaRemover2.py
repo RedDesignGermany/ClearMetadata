@@ -6,7 +6,7 @@ import hashlib
 
 # Begrüßung
 def greet():
-    print("\nWelcome to Clear Metadata Script!")
+    print("\n  Welcome to")
     print(r"   ____ _                   __  __      _            _       _        " + "\n" +
           r"  / ___| | ___  __ _ _ __  |  \/  | ___| |_ __ _  __| | __ _| |_ __ _ " + "\n" +
           r" | |   | |/ _ \/ _` | '__| | |\/| |/ _ \ __/ _` |/ _` |/ _` | __/ _` |" + "\n" +
@@ -278,7 +278,7 @@ if __name__ == "__main__":
         "RDG_MetaRemover.py -f test.mp3 \n\n"
         "If you want to remove metadata from all files in a specific folder:\n"
         "RDG_MetaRemover.py -p path/to/folder/ \n\n"
-        "**SUPPORTED FILE FORMATS:**\n"
+        "Supported file formats:\n"
         "  Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .webp, .heic\n"
         "  PDFs:   .pdf\n"
         "  Audios: .mp3, .flac, .wav, .m4a, .ogg, .aac\n"
