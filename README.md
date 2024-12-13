@@ -2,7 +2,8 @@
 made with :white_heart: by RED DESIGN GERMANY
 
 ## What does it do?
-Clear Metadata, as the name suggests, deletes all “superfluous” metadata from images, videos, PDFs, audios and even docx, xlxs, pptx docs. It's also possible to remove the metadata from the files in a folder. \nInstead of the -f or --file argument, -p or --path path/to/folder/ must be entered
+Clear Metadata, as the name suggests, deletes all “superfluous” metadata from images, videos, PDFs, audios and even docx, xlxs, pptx docs. It's also possible to remove metadata from
+ files in a folder. 
 
 ## Supported files:
 - .pdf
@@ -12,7 +13,7 @@ Clear Metadata, as the name suggests, deletes all “superfluous” metadata fro
 - .docx, .xlsx, .pptx
 
 ## Example call:
-To run the script and remove the metadata of an image, PDF, audio or video, you can use the following command:
+To run this script and remove metadata of an image, PDF, audio or video, you can use the following command:
 ```
 **for images:**
 zsh
