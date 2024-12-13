@@ -51,15 +51,11 @@ Required python modules:
 - openpyxl
 - python-pptx
 
-You can use a single commant to install all of them
+You can install all of them
 ```
 pip install pillow PyPDF2 mutagen moviepy moviepy python-docx openpyxl python-pptx
 ```
 or you can install them individually
-  
-```
-pip install pillow PyPDF2 mutagen moviepy
-```
 ```
 pip install pillow
 ```
