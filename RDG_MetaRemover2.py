@@ -1,10 +1,11 @@
+#!/usr/bin/python
+# -*- coding: ascii -*-
 import argparse
 import os
 from PIL import Image
 from PyPDF2 import PdfReader, PdfWriter
 import hashlib
 
-# Begrüßung
 def greet():
     print("\n  Welcome to")
     print(r"   ____ _                   __  __      _            _       _        " + "\n" +
