@@ -1,8 +1,17 @@
+<<<<<<< HEAD
+import argparse
+=======
+>>>>>>> 40f92c685882b5558c674f3b3ba0dce860fd0031
 import os
 from PIL import Image
 from PyPDF2 import PdfReader, PdfWriter
 import hashlib
 
+# Setze das Standard-Encoding auf UTF-8
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+
+# Begrüßung
 def greet():
     print("\n  Welcome to")
     print(r"   ____ _                   __  __      _            _       _        " + "\n" +
