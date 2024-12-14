@@ -3,7 +3,7 @@ made with :white_heart: by **RED DESIGN GERMANY**
 
 ## What does it do?
 Clear Metadata, as the name suggests, deletes all “superfluous” metadata from images, videos, PDFs, audios and even docx, xlxs, pptx docs. It's also possible to remove metadata from
- files within a folder. 
+ files in a folder. 
 
 ## Supported files:
 - .pdf
@@ -38,7 +38,7 @@ python RDG_MetaRemover.py --path path/to/your/folder/
 
 ## Install dependencies:
 
-Make sure that you install the "working" python version and required modules.
+Make sure that you install a "working" python version and required modules.
 
 "Working" Python Verison: 
 Python 3.13.1
