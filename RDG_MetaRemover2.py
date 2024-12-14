@@ -1,6 +1,3 @@
-#!/usr/bin/python
-# -*- coding: ascii -*-
-import argparse
 import os
 from PIL import Image
 from PyPDF2 import PdfReader, PdfWriter
@@ -244,7 +241,6 @@ def process_directory(directory):
         for file in files:
             filepath = os.path.join(root, file)
             
-            # Berechne den Hash der Datei, um Duplikate zu erkennen
             filehash = hash_file(filepath)
             if filehash in hashes:
                 print(f"Duplicate found: {filepath}. Deleting duplicate file.")
@@ -252,9 +248,8 @@ def process_directory(directory):
             else:
                 hashes[filehash] = filepath
 
-            # Zeige die Metadaten an
             show_metadata(filepath)
-            # Frage den Benutzer, ob die Metadaten gelöscht werden sollen
+            
             user_input = input(f"Do you want to clear metadata for {filepath}? (yes/no): ").strip().lower()
             if user_input == 'yes':
                 clear_metadata(filepath)
@@ -262,9 +257,8 @@ def process_directory(directory):
                 print(f"Skipping metadata clearing for {filepath}.")
 
 if __name__ == "__main__":
-    greet()  # Begrüßung aufrufen
-
-    # Einrichtung der Befehlszeilenargumente
+    greet()  
+    
     parser = argparse.ArgumentParser(
         description=(
     r"   ____ _                   __  __      _            _       _        " + "\n" +
@@ -290,10 +284,9 @@ if __name__ == "__main__":
     )
     parser.add_argument("-f", "--file", help="The file from which to remove metadata.")
     parser.add_argument("-p", "--path", help="The directory from which to remove metadata from all files within this directory.")
-    # Argumente parsen
+
     args = parser.parse_args()
 
-    # Metadaten der angegebenen Datei oder des angegebenen Verzeichnisses entfernen
     if args.file:
         if os.path.isfile(args.file):
             show_metadata(args.file)
