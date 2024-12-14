@@ -10,16 +10,13 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 # Begrüßung
 def greet():
-    print("\n  Welcome to")
+    print("\nWelcome to Clear Metadata Script!")
     print(r"   ____ _                   __  __      _            _       _        " + "\n" +
           r"  / ___| | ___  __ _ _ __  |  \/  | ___| |_ __ _  __| | __ _| |_ __ _ " + "\n" +
           r" | |   | |/ _ \/ _` | '__| | |\/| |/ _ \ __/ _` |/ _` |/ _` | __/ _` |" + "\n" +
           r" | |___| |  __/ (_| | |    | |  | |  __/ || (_| | (_| | (_| | || (_| |" + "\n" +
           r"  \____|_|\___|\__,_|_|    |_|  |_|\___|\__\__,_|\__,_|\__,_|\__\__,_|" + "\n" +
-           "   made with ♥ by RED DESIGN GERMANY \n")
-
-
-
+          "               made with ♥ by RED DESIGN GERMANY \n")
 def show_image_metadata(imgname):
     img = Image.open(imgname)
     if img.info:
@@ -242,11 +239,13 @@ def hash_file(filepath):
     return hasher.hexdigest()
 
 def process_directory(directory):
+    # Initialisieren eines Wörterbuchs zum Speichern von Datei-Hashes
     hashes = {}
     for root, dirs, files in os.walk(directory):
         for file in files:
             filepath = os.path.join(root, file)
             
+            # Berechne den Hash der Datei, um Duplikate zu erkennen
             filehash = hash_file(filepath)
             if filehash in hashes:
                 print(f"Duplicate found: {filepath}. Deleting duplicate file.")
@@ -254,17 +253,24 @@ def process_directory(directory):
             else:
                 hashes[filehash] = filepath
 
+    # Nach dem Entfernen von Duplikaten, Metadaten anzeigen und ggf. löschen
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            filepath = os.path.join(root, file)
+            # Zeige die Metadaten an
             show_metadata(filepath)
-            
+            # Frage den Benutzer, ob die Metadaten gelöscht werden sollen
             user_input = input(f"Do you want to clear metadata for {filepath}? (yes/no): ").strip().lower()
             if user_input == 'yes':
                 clear_metadata(filepath)
             else:
                 print(f"Skipping metadata clearing for {filepath}.")
 
+
 if __name__ == "__main__":
-    greet()  
-    
+    greet()  # Begrüßung aufrufen
+
+    # Einrichtung der Befehlszeilenargumente
     parser = argparse.ArgumentParser(
         description=(
     r"   ____ _                   __  __      _            _       _        " + "\n" +
@@ -272,27 +278,28 @@ if __name__ == "__main__":
     r" | |   | |/ _ \/ _` | '__| | |\/| |/ _ \ __/ _` |/ _` |/ _` | __/ _` |" + "\n" +
     r" | |___| |  __/ (_| | |    | |  | |  __/ || (_| | (_| | (_| | || (_| |" + "\n" +
     r"  \____|_|\___|\__,_|_|    |_|  |_|\___|\__\__,_|\__,_|\__,_|\__\__,_|" + "\n" +
-     "   made with ♥ by  RED DESIGN GERMANY \n\n"
-        "The Clear Metadata application removes metadata from various file types for a single file such as images, PDFs, audios, videos and Microsoft Office documents or from all files in a specific folder.\n\n"
+        "               made with ♥ by RED DESIGN GERMANY \n\n"
+        "The Clear Metadata application removes metadata from various file types for a single file such as images, PDFs, audios, videos and Microsoft Office documents or files from an entire folder.\n\n"
         "For instance: \n"
-        "  If you want to remove metadata from a single file:\n"
-        "  RDG_MetaRemover.py -f test.mp3 \n\n"
-        "  If you want to remove metadata from all files in a specific folder:\n"
-        "  RDG_MetaRemover.py -p path/to/folder/ \n\n"
-        "Supported file formats:\n"
+        "If you want to remove metadata from a single file:\n"
+        "RDG_MetaRemover.py -f test.mp3 \n\n"
+        "If you want to remove metadata from file of an entired folder:\n"
+        "RDG_MetaRemover.py -p path/to/folder/ \n\n"
+        "SUPPORTED FILE FORMATS:\n"
         "  Images: .jpg, .jpeg, .png, .gif, .bmp, .tiff, .webp, .heic\n"
         "  PDFs:   .pdf\n"
         "  Audios: .mp3, .flac, .wav, .m4a, .ogg, .aac\n"
         "  Videos: .mp4, .avi, .mkv, .mov, .wmv, .mpeg\n"
-        "  MSdocs: .docx, .xlsx, .pptx"
+        "  Microsoft Office documents: .docx, .xlsx, .pptx"
     ),
     formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument("-f", "--file", help="The file from which to remove metadata.")
     parser.add_argument("-p", "--path", help="The directory from which to remove metadata from all files within this directory.")
-
+    # Argumente parsen
     args = parser.parse_args()
 
+    # Metadaten der angegebenen Datei oder des angegebenen Verzeichnisses entfernen
     if args.file:
         if os.path.isfile(args.file):
             show_metadata(args.file)
