@@ -1,9 +1,9 @@
 # **Clear Metadata**
-made with :white_heart: by RED DESIGN GERMANY
+made with :white_heart: by **RED DESIGN GERMANY**
 
 ## What does it do?
 Clear Metadata, as the name suggests, deletes all “superfluous” metadata from images, videos, PDFs, audios and even docx, xlxs, pptx docs. It's also possible to remove metadata from
- files in a folder. 
+ files within a folder. 
 
 ## Supported files:
 - .pdf
@@ -13,35 +13,36 @@ Clear Metadata, as the name suggests, deletes all “superfluous” metadata fro
 - .docx, .xlsx, .pptx
 
 ## Example call:
-To run this script and remove metadata of an image, PDF, audio or video, you can use the following command:
+To run this script and remove metadata from an image, PDF, audio or video, you can use the following command for
+
+images:
 ```
-**for images:**
-zsh
 python RDG_MetaRemover.py -f your_image.jpg
 ```
+PDFs:
 ```
-**for PDFs:**
-zsh
 python RDG_MetaRemover.py -f your_PFD.pdf
 ```
+audios:
 ```
-**for audio:**
-zsh
 python RDG_MetaRemover.py --file your_mp3.mp3
 ```
+videos:
 ```
-**for video:**
-zsh
 python RDG_MetaRemover.py --file your_video.avi
 ```
+or you can remove metadata from ALL files in a folder:
 ```
-**for files within a folder:**
-zsh
 python RDG_MetaRemover.py --path path/to/your/folder/
 ```
 
 ## Install dependencies:
-Make sure that you install the required libraries/modules:
+
+Make sure that you install the "working" python version and required modules.
+
+"Working" Python Verison: 
+Python 3.13.1
+
 Required python modules: 
 - pillow
 - PyPDF
@@ -51,7 +52,7 @@ Required python modules:
 - openpyxl
 - python-pptx
 
-You can install all of them
+You can install them all with one command
 ```
 pip install pillow PyPDF2 mutagen moviepy moviepy python-docx openpyxl python-pptx
 ```
