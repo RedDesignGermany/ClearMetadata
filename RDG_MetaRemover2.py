@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 import argparse
-=======
->>>>>>> 40f92c685882b5558c674f3b3ba0dce860fd0031
 import os
 from PIL import Image
 from PyPDF2 import PdfReader, PdfWriter
