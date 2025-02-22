@@ -78,3 +78,6 @@ pip install openpyxl
 ```
 pip install python-pptx
 ```
+
+Made with ♥ in Nürnberg (Bavaria, Germany)  
+[RED DESIGN GERMANY](https://www.red-design-germany.net)
