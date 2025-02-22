@@ -1,5 +1,4 @@
 # **Clear Metadata**
-made with :white_heart: by **RED DESIGN GERMANY**
 
 ## What does it do?
 Clear Metadata, as the name suggests, deletes all “superfluous” metadata from images, videos, PDFs, audios and even docx, xlxs, pptx docs. It's also possible to remove metadata from
@@ -79,5 +78,5 @@ pip install openpyxl
 pip install python-pptx
 ```
 
-Made with ♥ in Nürnberg (Bavaria, Germany)  
-[RED DESIGN GERMANY](https://www.red-design-germany.net)
+Made with :white_heart:
+[**RED DESIGN GERMANY**](https://www.red-design-germany.net)
